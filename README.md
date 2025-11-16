@@ -1,3 +1,3 @@
 # D2L-Tutorial
 
-dep
+Launch: `jupyter notebook`
