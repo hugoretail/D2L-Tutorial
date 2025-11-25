@@ -24,5 +24,6 @@ loss function(s), surrogate objective, training set, test set, overfitting.
 
 Vocabulary: linear regression, Gaussian Noise, ...
 
-Resume at: 1.3.1.3. Tagging
+[PageRank: Google](https://en.wikipedia.org/wiki/PageRank)
 
+Resume at: 1.3.2. Unsupervised and Self-Supervised Learning
