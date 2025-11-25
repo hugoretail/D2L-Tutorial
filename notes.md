@@ -24,5 +24,5 @@ loss function(s), surrogate objective, training set, test set, overfitting.
 
 Vocabulary: linear regression, Gaussian Noise, ...
 
-Resume at: 1.3.1.2. Classification
+Resume at: 1.3.1.3. Tagging
 
