@@ -26,4 +26,4 @@ Vocabulary: linear regression, Gaussian Noise, ...
 
 [PageRank: Google](https://en.wikipedia.org/wiki/PageRank)
 
-Resume at: 1.3.4. Reinforcement Learning
+Resume at: 1.4. Roots
