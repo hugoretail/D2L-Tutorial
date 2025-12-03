@@ -1,0 +1,15 @@
+import torch
+
+x = torch.arange(12, dtype=torch.float32)
+# print(x.numel())
+# print(x.shape)
+# print(x.reshape(2,6))
+# print(x.reshape(4,-1))
+zeros = torch.zeros((2,3,4))
+# print(zeros)
+ones = torch.ones((3,2,2))
+# print(ones)
+random = torch.randn(7,8)
+# print(random)
+lst = torch.tensor([[2,4,2,3],[3,1,1,2],[3,2,1,4]])
+# print(lst)
