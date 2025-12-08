@@ -28,3 +28,7 @@ X = torch.arange(12,dtype=torch.float32).reshape(3,4)
 tf = torch.tensor([[True, False, True],[False, True, False]])
 # print(tf.sum())
 
+a = torch.arange(3).reshape((3,1))
+b = torch.arange(2).reshape((1,2))
+# print(a + b)
+
