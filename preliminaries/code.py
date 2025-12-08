@@ -13,3 +13,18 @@ random = torch.randn(7,8)
 # print(random)
 lst = torch.tensor([[2,4,2,3],[3,1,1,2],[3,2,1,4]])
 # print(lst)
+X = torch.tensor([[1,2,3],[4,5,6],[7,8,9]])
+# print(X[1,2])
+
+# print(torch.exp(X))
+
+x = torch.tensor([1.0,2,4,8])
+y = torch.tensor([2,2,2,2])
+# print(x+y, x-y, x*y, x/y, x**y)
+
+X = torch.arange(12,dtype=torch.float32).reshape(3,4)
+# ...
+
+tf = torch.tensor([[True, False, True],[False, True, False]])
+# print(tf.sum())
+
