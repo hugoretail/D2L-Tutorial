@@ -34,3 +34,22 @@ b = torch.arange(2).reshape((1,2))
 
 # Z = torch.zeros_like(Y)
 
+A = X.numpy()
+B = torch.from_numpy(A)
+# print(type(A), type(B))
+
+a = torch.tensor([3.5])
+# print(a, a.item(), float(a), int(a))
+
+# Exercises
+
+X = torch.arange(12,dtype=torch.float32).reshape(3,4)
+Y = torch.tensor([[4,5,6],[22,2,1],[4,2,1],[2,2,1]]).reshape(3,4)
+# print(X.shape, Y.shape)
+# print(X)
+# print(Y)
+# print(X == Y, X < Y, X > Y)
+
+a = torch.arange(1, 6, dtype =torch.float32).reshape((5, 1))
+b = torch.arange(1, 3).reshape((1, 2))
+# OK
