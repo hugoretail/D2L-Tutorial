@@ -12,5 +12,12 @@ NA,NA,140000''')
 
 import pandas as pd
 data = pd.read_csv(data_file)
-print(data)
+# print(data)
 
+# This line of code is splitting the data into two parts: `inputs` and `targets`.
+inputs, targets = data.iloc[:, 0:2], data.iloc[:, 2]
+inputs = pd.get_dummies(inputs, dummy_na=True)
+# print(inputs)
+
+inputs = inputs.fillna(inputs.mean())
+print(inputs)
