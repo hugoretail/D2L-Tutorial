@@ -1,1 +1,1 @@
-Resume at: TODO
+Resume at: 2.2.5 Exercises

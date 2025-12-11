@@ -20,4 +20,34 @@ inputs = pd.get_dummies(inputs, dummy_na=True)
 # print(inputs)
 
 inputs = inputs.fillna(inputs.mean())
-print(inputs)
+# print(inputs)
+
+import torch
+
+X = torch.tensor(inputs.to_numpy(dtype=float))
+y = torch.tensor(targets.to_numpy(dtype=float))
+# print(X, "\n", y)
+
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data"
+cols = [
+    "Sex", "Length", "Diameter", "Height", "Whole weight",
+    "Shucked weight", "Viscera weight", "Shell weight", "Rings"
+]
+abalone = pd.read_csv(url, names=cols)
+# print(abalone.head())
+
+# NOT WORKING
+# def count_missing_values(data, cols):
+#     cols_dict = {col: 0 for col in cols}
+#     counter = 0
+#     for col in range(len(data)):
+#         for y in range(len(cols)):
+#             if data[col][y] == None: counter+=1
+#         cols_dict[col] = counter
+#         counter = 0
+#     return cols_dict
+def count_missing_values(df,cols):
+    return df[cols].isna().sum().to_dict()
+
+missing_values = count_missing_values(abalone, cols)
+# print(missing_values)
