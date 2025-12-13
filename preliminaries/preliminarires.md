@@ -1,1 +1,1 @@
-Resume at: 2.2.5 Exercises
+Resume at: 2.3 Linear Algebra
