@@ -33,3 +33,18 @@ a=2
 X=torch.arange(24).reshape(2,3,4)
 # print(f"{a + X} \n {(a*X).shape}")
 
+x = torch.arange(3, dtype=torch.float32)
+# print(x, x.sum())
+
+# print(A.shape, A.sum())
+
+# print(A, A.shape, A.sum(axis=0).shape, A.sum(axis=0))
+
+# print(A.shape, A.sum(axis=1).shape)
+
+# print(A.sum(axis=[0, 1]) == A.sum())
+# print(A.mean() == A.sum() / A.numel())
+# print(A.shape[0] + A.shape[1] + 1 == A.numel())
+
+# print(A, A.mean(axis=1))
+
