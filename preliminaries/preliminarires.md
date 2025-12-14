@@ -1,6 +1,6 @@
 # Preliminaries
 
-Resume at: 2.3 Linear Algebra
+Resume at: 2.4.3. Partial Derivatives and Gradients
 
 ## 2.3.10. Matrix–Matrix Multiplication
 
