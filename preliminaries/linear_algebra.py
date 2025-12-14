@@ -48,3 +48,25 @@ x = torch.arange(3, dtype=torch.float32)
 
 # print(A, A.mean(axis=1))
 
+sum_A = A.sum(axis=1, keepdims=True)
+# print(sum_A, sum_A.shape)
+# print(A / sum_A )
+
+# print(A, A.cumsum(axis=0))
+
+y = torch.ones(3, dtype=torch.float32)
+# print(x,y,torch.dot(x,y))
+
+# print(A,x)
+# print(A.shape,x.shape,A@x)
+
+B = torch.ones(3,4)
+# print(f"{A} \n {B}")
+# print(A@B)
+
+u = torch.tensor([3.0, -4.0])
+# print(torch.norm(u))
+# print(torch.abs(u).sum())
+# print(torch.norm(torch.ones((4,9))))
+
+print(A, A.T)
