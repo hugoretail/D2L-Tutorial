@@ -1,6 +1,6 @@
 # Preliminaries
 
-Resume at: 2.4.3. Partial Derivatives and Gradients
+Resume at: 2.4.5 Discussion
 
 ## 2.3.10. Matrix–Matrix Multiplication
 
