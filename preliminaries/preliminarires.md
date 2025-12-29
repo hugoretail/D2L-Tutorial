@@ -1,6 +1,6 @@
 # Preliminaries
 
-Resume at: 2.5.3 Detaching Computation
+Resume at: 2.6. Probability and Statistics
 
 ## 2.3.10. Matrix–Matrix Multiplication
 
