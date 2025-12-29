@@ -1,6 +1,6 @@
 # Preliminaries
 
-Resume at: 2.5. Automatic Differentiation
+Resume at: 2.5.3 Detaching Computation
 
 ## 2.3.10. Matrix–Matrix Multiplication
 
