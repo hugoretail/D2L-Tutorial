@@ -1,6 +1,6 @@
 # Preliminaries
 
-Resume at: 2.4.5 Discussion
+Resume at: 2.5. Automatic Differentiation
 
 ## 2.3.10. Matrix–Matrix Multiplication
 
