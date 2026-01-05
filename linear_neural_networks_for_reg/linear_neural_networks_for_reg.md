@@ -1,3 +1,4 @@
 # Linear neural networks for regression
 
-Resume at: 3.2. Object-Oriented Design for Implementation
+Resume at: 3.3. Synthetic Regression Data
+
