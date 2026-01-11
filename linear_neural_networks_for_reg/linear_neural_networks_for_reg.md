@@ -1,4 +1,4 @@
 # Linear neural networks for regression
 
-Resume at: 3.4.3 Defining the Optimization Algorithm
+Resume at: 3.5. Concise Implementation of Linear Regression
 

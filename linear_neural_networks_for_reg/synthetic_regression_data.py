@@ -1,7 +1,10 @@
 import random
 import torch
 import torch.utils.data as torch_data
-from object_oriented_design_for_impl import DataModule, add_to_class
+try:
+  from .object_oriented_design_for_impl import DataModule, add_to_class
+except ImportError:  # pragma: no cover
+  from object_oriented_design_for_impl import DataModule, add_to_class
 
 class SyntheticRegressionData(DataModule):
   def __init__(self,w,b,noise=0.01,num_train=1000,num_val=1000,
@@ -14,9 +17,11 @@ class SyntheticRegressionData(DataModule):
     noise = torch.randn(n,1) * noise
     self.y = torch.matmul(self.X, w.reshape((-1,1))) + b + noise
     
-data = SyntheticRegressionData(w=torch.tensor([2,-3.4]), b=4.2)
-# print(data)
-# print('features', data.X[0],'\nlabel:',data.y[0])
+if __name__ == '__main__':
+  data = SyntheticRegressionData(w=torch.tensor([2,-3.4]), b=4.2)
+  X, y = next(iter(data.train_dataloader()))
+  print('X shape:', X.shape, '\ny shape:', y.shape)
+  print(len(data.train_dataloader()))
 
 # @add_to_class(SyntheticRegressionData)
 # def get_dataloader(self, train):
@@ -46,7 +51,3 @@ def get_dataloader(self, train):
   # The line `i = slice(0,self.num_train) if train else slice(self.num_train, None)` is a conditional expression in Python.
   i = slice(0,self.num_train) if train else slice(self.num_train, None)
   return self.get_tensorloader((self.X,self.y), train, i)
-
-X, y = next(iter(data.train_dataloader()))
-print('X shape:', X.shape, '\ny shape:', y.shape)
-print(len(data.train_dataloader()))
