@@ -215,4 +215,19 @@ class Trainer(HyperParameters):
         param.grad[:] *= grad_clip_val / norm
 
   def fit_epoch(self):
-    raise NotImplementedError
+    self.model.train()
+    for X, y in self.train_dataloader:
+      self.optim.zero_grad()
+      y_hat = self.model(X)
+      loss = self.model.loss(y_hat, y)
+      loss.backward()
+      if self.gradient_clip_val > 0:
+        self.clip_gradients(self.gradient_clip_val, self.model)
+      self.optim.step()
+    if self.val_dataloader is not None:
+      self.model.eval()
+      with torch.no_grad():
+        for X, y in self.val_dataloader:
+          y_hat = self.model(X)
+          loss = self.model.loss(y_hat, y)
+    # Optionally, add logging or progress tracking here
