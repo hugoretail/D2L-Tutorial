@@ -1,4 +1,4 @@
 # Linear neural networks for regression
 
-Resume at: 3.6. Generalization
+Resume at: 3.6.1.1. Model Complexity
 
