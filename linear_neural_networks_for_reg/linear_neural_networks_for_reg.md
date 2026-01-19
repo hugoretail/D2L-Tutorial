@@ -1,6 +1,6 @@
 # Linear neural networks for regression
 
-Resume at: 3.7. Weight Decay
+Resume at: 3.7.1. Norms and Weight Decay
 
 ## 3.6 Generalization
 
