@@ -5,7 +5,17 @@ from torch import nn
 import collections
 import inspect
 from IPython import display
+from IPython import get_ipython
 import matplotlib.pyplot as plt
+
+
+def _in_jupyter_kernel() -> bool:
+  """Return True when running in a Jupyter/IPykernel context."""
+  try:
+    ip = get_ipython()
+    return ip is not None and hasattr(ip, 'config') and ('IPKernelApp' in ip.config)
+  except Exception:
+    return False
 
 def add_to_class(Class): #@save
   """Register functions as methods in created class."""
@@ -116,8 +126,19 @@ class ProgressBoard(HyperParameters):
     axes.set_xscale(self.xscale)
     axes.set_yscale(self.yscale)
     axes.legend(plt_lines, labels)
-    display.display(self.fig)
-    display.clear_output(wait=True)
+    if _in_jupyter_kernel():
+      display.display(self.fig)
+      display.clear_output(wait=True)
+    else:
+      # In a normal terminal/script, use Matplotlib's GUI event loop.
+      plt.ion()
+      try:
+        self.fig.canvas.draw_idle()
+        self.fig.canvas.flush_events()
+        plt.pause(0.001)
+      except Exception:
+        # If running headless (non-GUI backend), callers can still savefig().
+        pass
   
 if __name__ == '__main__':
   board = ProgressBoard('x')
@@ -143,7 +164,10 @@ class Module(nn.Module, HyperParameters):
     assert hasattr(self, 'trainer'), 'Trainer is not inited'
     self.board.xlabel = 'epoch'
     if train:
-      x = float(self.trainer.train_batch_idx) / float(self.trainer.num_train_batches)
+      # Spread training points across the epoch axis instead of squeezing
+      # everything into [0, 1).
+      x = (float(self.trainer.epoch)
+           + float(self.trainer.train_batch_idx) / float(self.trainer.num_train_batches))
       n = float(self.trainer.num_train_batches) / float(self.plot_train_per_epoch)
     else:
       x = float(self.trainer.epoch) + 1.0

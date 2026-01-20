@@ -11,3 +11,9 @@ Resume at: 3.7.1. Norms and Weight Decay
 2. IDD = Independance and Identicaly Distributed.
 
 Answers : https://chat.mistral.ai/chat/580a2085-4b55-453b-8b29-4725ed2f9178
+
+## 3.7 Weight Decay
+
+### Exercises
+
+1. 
