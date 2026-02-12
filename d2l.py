@@ -17,5 +17,6 @@ import requests
 from IPython import display
 from matplotlib import pyplot as plt
 from matplotlib_inline import backend_inline
+import torch
 
 d2l = sys.modules[__name__]
