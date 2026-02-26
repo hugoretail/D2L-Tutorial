@@ -1,3 +1,8 @@
 # D2L-Tutorial
 
-Reading...
+Currently implementing Softmax Regression...
+
+## Finished Chapters
+- [x] Linear Neural Networks for Regression
+- [ ] Linear Neural Networks for Classification
+- [ ] Multilayer Perceptrons
