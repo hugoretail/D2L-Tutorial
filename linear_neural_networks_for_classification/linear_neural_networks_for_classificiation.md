@@ -1,9 +1,10 @@
 # Linear neural networks for classificiation
 
-Resume at: 4.5 Concise implementation of Softmax Regression
+Resume at: 4.6 Generalization in Classification
 
 Learning with Mistral as a tutor if I need help:
 > https://chat.mistral.ai/chat/f4fe68dc-623c-47cf-b116-a17f6803a724
+> https://chat.mistral.ai/chat/1d77e5f8-c5d7-408f-b034-07ed780bb4a7
 
 ## 4.3.4 Exercises
 
@@ -44,3 +45,21 @@ L_v = (1/m)*([l_i for i in range(m)]) où l_i est la perte pour le i-ème exempl
 5. Un taux trop petit → Convergence lente.
 Un taux trop grand → Divergence (la perte explose).
 Un taux optimal → Convergence rapide et stable.
+
+## 4.5.5 Exercises
+
+1. Normalement underflow arrive si exp(x) devient trop petit pour être représenté, et à l'inverse exp(x) trop grand...
+
+```python
+print(np.log(np.finfo(np.float64).max))
+print(np.log(np.finfo(np.float64).tiny))
+#etc
+```
+
+2. log_2(x), quantification affine (x_quant = round(x/s) + z, avec s un facteur d'échelle et z un zéro-point)
+
+3. Overfitting (modèle connait / coeur nos données de train). On peut fix en rajoutant des données, ou faire de l'early stopping (genre si le modèle détecte 10x d'affilée que l'on ne fait pas de progrès loss / validation alors stop).
+
+4. Trop petit = modèle apprend trop lentement.
+Trop grand = la loss oscille ou est trop grande. J'avais utilié du grid search pour tester ça.
+

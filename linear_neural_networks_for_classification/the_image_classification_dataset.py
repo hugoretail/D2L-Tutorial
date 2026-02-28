@@ -33,6 +33,7 @@ class FashionMNIST(DataModule):
   def __init__(self,batch_size=64,resize=(28,28)):
     super().__init__()
     self.save_hyperparameters()
+    self.num_workers = 0  # Fix for Windows multiprocessing issues
     trans = transforms.Compose([transforms.Resize(resize),
                                 transforms.ToTensor()])
     self.train = torchvision.datasets.FashionMNIST(
@@ -69,7 +70,24 @@ f'{time.time() - tic:.2f} sec'
 
 def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5): #@save
   """Plot a list of images."""
-  raise NotImplementedError
+  import matplotlib.pyplot as plt
+  from matplotlib import gridspec
+  figsize = (num_cols * scale, num_rows * scale)
+  fig, axes = plt.subplots(num_rows, num_cols, figsize=figsize)
+  axes = axes.flatten() if num_rows * num_cols > 1 else [axes]
+  for i, (ax, img) in enumerate(zip(axes, imgs)):
+      img_np = img.detach().cpu().numpy()
+      if img_np.ndim == 3 and img_np.shape[0] == 1:
+          img_np = img_np.squeeze(0)
+      ax.imshow(img_np, cmap='gray')
+      ax.axis('off')
+      if titles and i < len(titles):
+          ax.set_title(titles[i], fontsize=8)
+  # Hide unused axes
+  for ax in axes[len(imgs):]:
+      ax.axis('off')
+  plt.tight_layout()
+  plt.show()
 
 @add_to_class(FashionMNIST) #@save
 def visualize(self, batch, nrows=1,ncols=8,labels=[]):
