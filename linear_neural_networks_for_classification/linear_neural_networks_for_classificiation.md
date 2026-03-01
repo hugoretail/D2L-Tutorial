@@ -1,6 +1,6 @@
 # Linear neural networks for classificiation
 
-Resume at: 4.6 Generalization in Classification
+Resume at: 4.7. Environment and Distribution Shift
 
 Learning with Mistral as a tutor if I need help:
 > https://chat.mistral.ai/chat/f4fe68dc-623c-47cf-b116-a17f6803a724
@@ -62,4 +62,39 @@ print(np.log(np.finfo(np.float64).tiny))
 
 4. Trop petit = modèle apprend trop lentement.
 Trop grand = la loss oscille ou est trop grande. J'avais utilié du grid search pour tester ça.
+
+## 4.6.1 The Test Set
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-variant="-tex-calligraphic" mathvariant="script">O</mi>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msqrt>
+    <mi>n</mi>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+</math>
+
+Erreur réelle :
+E(x,y)∼P​[1(f(x)!=y)]
+
+"""
+With these misgivings in mind, you might now be sufficiently primed to see the appeal of statistical learning theory, the mathematical subfield of machine learning whose practitioners aim to elucidate the fundamental principles that explain why/when models trained on empirical data can/will generalize to unseen data. One of the primary aims of statistical learning researchers has been to bound the generalization gap, relating the properties of the model class to the number of samples in the dataset.
+"""
+
+Donc on utilise les stats en ML pour comprendre pourquoi mon modèle généralise sur mes données, ou pourquoi il ne généralise pas.
+
+- Question : est-ce qu'il ne faudrait pas demander à quelqu'un d'extérieur de récupérer un set de test pour nous ? Comme ça ce n'est pas biaisé ? Je suis sûrement hors-sujet là. Mais comme ça, ce ne serait pas biaisé.
+
+## 4.6.5 Exercises
+
+1. Sans même calculer, selon les ordres de grandeur indiqués auparavant, au moins des millions (voire milliard ?)
+2. m*(k-1) + 1 avec m étant le nombre d'échantillons du test set, et k le nombre de classes possibles
+3. -
+4. -
 
