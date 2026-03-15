@@ -1,6 +1,8 @@
 # Multilayer Perceptrons
 
-Resume at: 5.2 Implementation of Multilayer Perceptrons
+Resume at: 5.3. Forward Propagation, Backward Propagation, and Computational Graphs
+
+Mistral : https://chat.mistral.ai/chat/e2910dc9-8973-479f-bcfc-49d714b3c703
 
 ## 5.1.2 Activation Functions
 
