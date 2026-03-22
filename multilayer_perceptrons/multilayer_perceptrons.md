@@ -1,6 +1,6 @@
 # Multilayer Perceptrons
 
-Resume at: 5.3. Forward Propagation, Backward Propagation, and Computational Graphs
+Resume at: 5.4. Numerical Stability and Initialization
 
 Mistral : https://chat.mistral.ai/chat/e2910dc9-8973-479f-bcfc-49d714b3c703
 
@@ -23,3 +23,4 @@ Mistral : https://chat.mistral.ai/chat/e2910dc9-8973-479f-bcfc-49d714b3c703
 > tanh(x)=(ex+e−x)/(ex−e−x​),σ(2x)=1/(1+e−2x).
 > ...
 5. 
+
